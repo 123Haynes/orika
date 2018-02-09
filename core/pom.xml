@@ -58,6 +58,11 @@
 			<artifactId>janino</artifactId>
 			<scope>compile</scope>
 		</dependency>
+		
+		<dependency>
+		  <groupId>javax.transaction</groupId>
+		  <artifactId>jta</artifactId>
+		</dependency>
 
 	</dependencies>
 

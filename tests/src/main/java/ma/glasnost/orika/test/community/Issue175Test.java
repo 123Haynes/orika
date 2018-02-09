@@ -56,7 +56,7 @@ public class Issue175Test {
     public static class Source {
 
         private String value;
-        private List<NestedSource> nested = new ArrayList();
+        private List<NestedSource> nested = new ArrayList<>();
 
         public void setValue(String value) {
             this.value = value;

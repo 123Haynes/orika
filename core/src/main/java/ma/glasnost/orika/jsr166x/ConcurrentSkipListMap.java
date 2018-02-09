@@ -24,9 +24,19 @@
 
 package ma.glasnost.orika.jsr166x;
 
-import java.util.*;
-import java.util.concurrent.*;
-import java.util.concurrent.atomic.*;
+import java.util.AbstractCollection;
+import java.util.AbstractMap;
+import java.util.AbstractSet;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
 /**
  * A scalable {@link ConcurrentNavigableMap} implementation.  This
@@ -3248,7 +3258,7 @@ public class ConcurrentSkipListMap<K,V> extends AbstractMap<K,V>
                 throw new NullPointerException();
             if (!inOpenRange(fromKey) || !inOpenRange(toKey))
                 throw new IllegalArgumentException("key out of range");
-            return new ConcurrentSkipListSubMap(m, fromKey, toKey);
+            return new ConcurrentSkipListSubMap<K, V>(m, fromKey, toKey);
         }
 
         public ConcurrentNavigableMap<K,V> headMap(K toKey) {
@@ -3256,7 +3266,7 @@ public class ConcurrentSkipListMap<K,V> extends AbstractMap<K,V>
                 throw new NullPointerException();
             if (!inOpenRange(toKey))
                 throw new IllegalArgumentException("key out of range");
-            return new ConcurrentSkipListSubMap(m, least, toKey);
+            return new ConcurrentSkipListSubMap<K, V>(m, least, toKey);
         }
 
         public  ConcurrentNavigableMap<K,V> tailMap(K fromKey) {
@@ -3264,7 +3274,7 @@ public class ConcurrentSkipListMap<K,V> extends AbstractMap<K,V>
                 throw new NullPointerException();
             if (!inOpenRange(fromKey))
                 throw new IllegalArgumentException("key out of range");
-            return new ConcurrentSkipListSubMap(m, fromKey, fence);
+            return new ConcurrentSkipListSubMap<K, V>(m, fromKey, fence);
         }
 
         /* ----------------  Relational methods -------------- */

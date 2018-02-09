@@ -18,10 +18,12 @@
 
 package ma.glasnost.orika.test.hint;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.MappingHint;
-import ma.glasnost.orika.OrikaSystemProperties;
 import ma.glasnost.orika.metadata.ClassMapBuilder;
 import ma.glasnost.orika.test.MappingUtil;
 import ma.glasnost.orika.test.unenhance.SuperTypeTestCaseClasses.Author;
@@ -33,10 +35,6 @@ import ma.glasnost.orika.test.unenhance.SuperTypeTestCaseClasses.BookParent;
 import ma.glasnost.orika.test.unenhance.SuperTypeTestCaseClasses.Library;
 import ma.glasnost.orika.test.unenhance.SuperTypeTestCaseClasses.LibraryMyDTO;
 import ma.glasnost.orika.test.unenhance.SuperTypeTestCaseClasses.LibraryParent;
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
 public class DefaultMappingHintTestCase {
     

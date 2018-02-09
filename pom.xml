@@ -173,12 +173,12 @@
                 <version>3.2.2</version>
                 <scope>test</scope>
             </dependency>
-
+            
             <dependency>
-                <groupId>com.googlecode.concurrentlinkedhashmap</groupId>
-                <artifactId>concurrentlinkedhashmap-lru</artifactId>
-                <version>1.4.2</version>
-            </dependency>
+			    <groupId>com.github.ben-manes.caffeine</groupId>
+			    <artifactId>caffeine</artifactId>
+			    <version>2.6.1</version>
+			</dependency>
 
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -300,8 +300,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
 	    <plugin>
@@ -328,7 +328,7 @@
                 <configuration>
                     <sourceEncoding>utf-8</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
-                    <targetJdk>1.7</targetJdk>
+                    <targetJdk>1.8</targetJdk>
                 </configuration>
             </plugin>
             <plugin>

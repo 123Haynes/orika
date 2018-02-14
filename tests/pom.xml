@@ -58,30 +58,36 @@
 			<artifactId>easymock</artifactId>
 			<scope>compile</scope>
 		</dependency>
-
+  
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
         
 		<dependency>
 			<groupId>org.hibernate.common</groupId>
 			<artifactId>hibernate-commons-annotations</artifactId>
 			<scope>compile</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.hibernate</groupId>
-					<artifactId>hibernate</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>javassist</groupId>
+                    <artifactId>javassist</artifactId>
+                </exclusion>
+            </exclusions>
 			<scope>compile</scope>
 		</dependency>
+		
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <scope>compile</scope>
+        </dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>
